@@ -1,2 +1,15 @@
-JIAD 
-JIAD 
+<html>
+    <head>
+        <title> The Gossip Project </title>
+    </head>
+    <body>
+        <h1>PAGE POTIN</h1><br/>
+
+        <form action= '/gossips/:id' method='POST'>
+        <p>Vous avez demandé la page du potin n° <%= params[:id] %></p><br/>
+        Son auteur : <%= Gossip.all["#{params[:id]}".to_i + -1].author %><br/>
+        Son contenu : <%= Gossip.all["#{params[:id]}".to_i + -1].content %>
+        </form>
+        <a href ="http://localhost:9393">Revenir à la page des potins.</a>
+    </body>
+</html>
